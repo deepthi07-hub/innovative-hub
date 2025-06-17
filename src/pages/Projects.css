@@ -1,0 +1,234 @@
+/* src/components/Projects/Projects.css - Specific styles for the Projects page */
+
+/* Page specific overrides and additions for Projects */
+.projects-page h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 3rem; /* Larger, more impactful heading */
+  color: #2b77c3; /* Deep, professional blue */
+  font-weight: 800;
+  animation: slideInUp 0.7s ease-out forwards;
+}
+
+.projects-page .page-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+  font-size: 1.15rem; /* Clear introductory text */
+  color: #444;
+  animation: fadeIn 0.8s ease-out 0.2s forwards;
+}
+
+.projects-page .section-heading {
+  font-size: 2rem; /* Sub-section headings */
+  color: #2b77c3; /* Darker charcoal */
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e7e7e7; /* Subtle separator */
+  animation: slideInLeft 0.8s ease-out 0.4s forwards;
+}
+
+/* Projects Grid */
+.projects-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid columns */
+  gap: 30px; /* Space between project cards */
+  margin-top: 30px;
+}
+
+.project-card {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease-out forwards; /* Animation for individual cards */
+}
+
+/* Staggered animation for project cards */
+.projects-list .project-card:nth-child(1) { animation-delay: 0.6s; }
+.projects-list .project-card:nth-child(2) { animation-delay: 0.8s; }
+.projects-list .project-card:nth-child(3) { animation-delay: 1.0s; }
+
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.project-image {
+  max-width: 100%;
+  height: 180px; /* Fixed height for image consistency */
+  object-fit: cover; /* Ensures image covers the area */
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.project-title {
+  color: #002244;
+  font-size: 1.7rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.project-category {
+  font-size: 0.9rem;
+  color: #2b77c3;
+  font-weight: 600;
+  background-color: #e6f0fa;
+  padding: 4px 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.project-description {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1; /* Allows description to take available space */
+}
+
+.project-links {
+  margin-top: auto; /* Pushes links to the bottom of the card */
+  display: flex;
+  justify-content: center; /* Center the links */
+  gap: 15px; /* Space between links */
+  flex-wrap: wrap; /* Allow links to wrap on smaller screens */
+}
+
+.project-link {
+  display: inline-block;
+  background-color: #2b77c3;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.project-link:hover {
+  background-color: #002244;
+  transform: translateY(-2px);
+}
+
+.no-projects-message {
+  text-align: center;
+  grid-column: 1 / -1; /* Span across all columns */
+  padding: 50px;
+  font-style: italic;
+  color: #777;
+  font-size: 1.1rem;
+}
+
+/* Keyframe Animations (consistent with other pages) */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .projects-page h1 {
+    font-size: 2.5rem;
+  }
+  .projects-page .section-heading {
+    font-size: 1.8rem;
+  }
+  .project-title {
+    font-size: 1.5rem;
+  }
+  .project-description {
+    font-size: 0.95rem;
+  }
+  .project-image {
+    height: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-page h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  .projects-page .page-intro {
+    font-size: 1rem;
+    margin-bottom: 40px;
+  }
+  .projects-page .section-heading {
+    font-size: 1.7rem;
+    margin-top: 40px;
+  }
+  .projects-list {
+    grid-template-columns: 1fr; /* Stack projects on small screens */
+    gap: 20px;
+  }
+  .project-card {
+    padding: 20px;
+  }
+  .project-title {
+    font-size: 1.4rem;
+  }
+  .project-image {
+    height: 200px; /* Adjust height for single column */
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-page h1 {
+    font-size: 1.8rem;
+  }
+  .projects-page .page-intro {
+    font-size: 0.9rem;
+  }
+  .projects-page .section-heading {
+    font-size: 1.5rem;
+  }
+  .project-title {
+    font-size: 1.3rem;
+  }
+  .project-image {
+    height: 180px;
+  }
+  .project-link {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}

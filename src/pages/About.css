@@ -1,0 +1,289 @@
+/* App.css - Updated for a more professional and dynamic About section */
+
+/* General Body Styling (Good practice for overall page) */
+body {
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /* Modern, clean font stack */
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  background-color: #f0f2f5; /* A very light, subtle background for the entire body */
+  scroll-behavior: smooth;
+}
+
+/* Base Styles for the .page container (About Section) */
+.page {
+  padding: 60px 30px; /* More balanced padding */
+  max-width: 1000px; /* Slightly wider for more content space */
+  margin: 60px auto; /* Centered with more vertical margin */
+  background-color: #ffffff; /* Clean white background for the content area */
+  border-radius: 16px; /* Slightly more rounded corners for softness */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Deeper, softer shadow */
+  text-align: left; /* Align text to left for professionalism, except main H1 */
+  opacity: 0; /* Initial state for animation */
+  transform: translateY(20px); /* Initial state for animation */
+  animation: pageFadeIn 0.8s ease-out forwards; /* Overall page entrance animation */
+  position: relative; /* For potential future absolute positioning of elements */
+  overflow: hidden; /* Ensures shadows/animations don't cause scrollbars */
+}
+
+/* Heading Styles */
+.page h1 {
+  font-size: 3.2rem; /* Larger, more impactful main heading */
+  font-weight: 800; /* Extra bold */
+  color: #2b77c3; /* Deep, professional blue */
+  text-align: center; /* Keep main H1 centered */
+  margin-bottom: 30px;
+  letter-spacing: -0.02em; /* Slightly tighter letter spacing */
+  opacity: 0; /* Initial state for animation */
+  transform: translateY(20px);
+  animation: slideInUp 0.7s ease-out 0.2s forwards; /* Staggered animation */
+}
+
+.page h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2b77c3; /* Darker charcoal for sub-headings */
+  margin-top: 40px; /* More space above new sections */
+  margin-bottom: 25px;
+  text-align: center; /* Keep main sub-heading centered */
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e7e7e7; /* Subtle bottom border */
+  opacity: 0; /* Initial state for animation */
+  transform: translateX(-20px);
+  animation: slideInLeft 0.8s ease-out 0.4s forwards; /* Staggered animation */
+}
+
+.page h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #2b77c3; /* Slightly lighter charcoal for feature headings */
+  margin-bottom: 15px;
+  position: relative; /* For potential icon/bullet positioning */
+  padding-bottom: 8px; /* For a subtle underline */
+  border-bottom: 1px solid #f0f0f0; /* Very light underline */
+  opacity: 0; /* Initial state for animation */
+  transform: translateY(10px);
+  animation: fadeIn 0.8s ease-out forwards; /* General fade in for these */
+}
+
+/* Paragraph Styles */
+.page p {
+  font-size: 1.1rem; /* Slightly refined paragraph size */
+  line-height: 1.7;
+  color: black;
+  margin-bottom: 20px;
+  padding: 0; /* Remove horizontal padding from App.css, let container handle it */
+  opacity: 0; /* Initial state for animation */
+  animation: fadeIn 0.8s ease-out forwards; /* General fade in */
+}
+
+/* Specific styling for the first general paragraph */
+.page > p:first-of-type {
+  text-align: center; /* Keep first paragraph centered */
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  font-size: 1.15rem; /* Slightly larger for emphasis */
+  color: black;
+  animation-delay: 0.3s; /* Delay for this specific paragraph */
+}
+
+/* The paragraph directly under H2 (ATBI intro) */
+.page h2  {
+  text-align: center; /* Keep centered if desired, or remove for left align */
+  max-width: 850px;
+  margin: 0 auto 40px auto;
+  font-size: 1.6rem;
+  color: #2b77c3;
+  animation-delay: 0.5s; /* Delay for this paragraph */
+}
+.page p{
+    text-align: center; /* Keep centered if desired, or remove for left align */
+  max-width: 850px;
+  margin: 0 auto 40px auto;
+  font-size: 1.1rem;
+  color: black;
+  animation-delay: 0.5s; /* Delay for this paragraph */
+}
+
+/* Grid Layout for Feature Sections (Recognition & Incubation) */
+.about-features-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column on small screens */
+  gap: 30px; /* Space between grid items */
+  margin-top: 40px;
+}
+
+@media (min-width: 768px) {
+  .about-features-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns on larger screens */
+    gap: 40px; /* More space between columns */
+  }
+}
+
+/* Style for individual feature boxes within the grid */
+.about-features-grid > div {
+  background-color: #fdfdfd; /* Slightly different background for feature boxes */
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow for individual boxes */
+  border: 1px solid #eee; /* Very light border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+  opacity: 0; /* Initial state for animation */
+  transform: translateY(20px);
+  animation: slideInUp 0.8s ease-out forwards; /* Animation for individual boxes */
+}
+
+.about-features-grid > div:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
+}
+
+/* Stagger animation for grid items */
+.about-features-grid > div:nth-child(1) { animation-delay: 0.8s; }
+.about-features-grid > div:nth-child(2) { animation-delay: 1.0s; }
+
+
+/* List Item Styles */
+.page ul {
+  padding-left: 25px; /* Indent lists */
+  list-style: none; /* Remove default bullet points */
+  margin-bottom: 15px;
+}
+
+.page ul li {
+  position: relative;
+  margin-bottom: 12px;
+  padding-left: 30px; /* Space for custom bullet */
+  color: black;
+  line-height: 1.6;
+  opacity: 0; /* Initial state for animation */
+  transform: translateX(-10px);
+  animation: slideInLeft 0.6s ease-out forwards; /* List item animation */
+}
+
+/* Custom bullet point using pseudo-elements */
+.page ul li::before {
+  content: '✓'; /* Checkmark for a professional feel */
+  font-family: 'Segoe UI', sans-serif;
+  color: #28a745; /* Green color for the checkmark */
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0px; /* Adjust vertical alignment */
+  font-size: 1.2em;
+}
+
+/* Animation Delays for list items (more precise control if needed, otherwise general fadeIn applies) */
+.about-features-grid > div:nth-child(1) ul li:nth-child(1) { animation-delay: 1.2s; }
+.about-features-grid > div:nth-child(1) ul li:nth-child(2) { animation-delay: 1.3s; }
+.about-features-grid > div:nth-child(2) ul li:nth-child(1) { animation-delay: 1.4s; }
+.about-features-grid > div:nth-child(2) ul li:nth-child(2) { animation-delay: 1.5s; }
+.about-features-grid > div:nth-child(2) ul li:nth-child(3) { animation-delay: 1.6s; }
+
+
+/* Keyframe Animations */
+@keyframes pageFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .page {
+    padding: 50px 25px;
+    margin: 40px auto;
+  }
+  .page h1 {
+    font-size: 2.5rem;
+  }
+  .page h2 {
+    font-size: 2rem;
+  }
+  .page h3 {
+    font-size: 1.4rem;
+  }
+  .page p {
+    font-size: 1.05rem;
+  }
+  .page > p:first-of-type, .page h2 + p {
+    font-size: 1.08rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .page {
+    padding: 30px 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+  }
+  .page h1 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+  }
+  .page h2 {
+    font-size: 1.7rem;
+    margin-top: 30px;
+  }
+  .page h3 {
+    font-size: 1.3rem;
+  }
+  .page p {
+    font-size: 1rem;
+  }
+  .page > p:first-of-type, .page h2 + p {
+    font-size: 1rem;
+  }
+  .about-features-grid {
+    grid-template-columns: 1fr; /* Stack columns on small screens */
+    gap: 25px;
+  }
+  .about-features-grid > div {
+    padding: 20px;
+  }
+  .page ul {
+    padding-left: 20px;
+  }
+  .page ul li {
+    padding-left: 25px;
+  }
+  .page ul li::before {
+    font-size: 1.1em;
+    top: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 20px 15px;
+    margin: 15px auto;
+  }
+  .page h1 {
+    font-size: 1.8rem;
+  }
+  .page h2 {
+    font-size: 1.5rem;
+  }
+}

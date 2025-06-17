@@ -1,0 +1,170 @@
+/* src/components/Events/Events.css - Specific styles for the Events page */
+
+.events-page h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 3rem; /* Large, impactful heading */
+  color: #2b77c3; /* Deep, professional blue */
+  font-weight: 800; /* Extra bold */
+  animation: slideInUp 0.7s ease-out forwards; /* Entrance animation */
+}
+
+.events-page .page-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px auto;
+  font-size: 1.15rem; /* Clear introductory text */
+  color: #444;
+  animation: fadeIn 0.8s ease-out 0.2s forwards; /* Entrance animation */
+}
+
+.events-page .section-heading {
+  font-size: 2rem; /* Sub-section headings */
+  color: #2b77c3; /* Darker charcoal */
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e7e7e7; /* Subtle separator */
+  animation: slideInLeft 0.8s ease-out 0.4s forwards; /* Entrance animation */
+}
+
+/* Events List Grid */
+.events-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid for event cards */
+  gap: 25px; /* Space between event cards */
+  margin-top: 30px;
+}
+
+.event-card {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+  border: 1px solid #eee;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease-out forwards; /* Animation for individual cards */
+}
+
+/* Staggered animation for event cards */
+.events-list .event-card:nth-child(1) { animation-delay: 0.6s; }
+.events-list .event-card:nth-child(2) { animation-delay: 0.8s; }
+.events-list .event-card:nth-child(3) { animation-delay: 1.0s; }
+.events-list .event-card:nth-child(4) { animation-delay: 1.2s; }
+.events-list .event-card:nth-child(5) { animation-delay: 1.4s; }
+
+
+.event-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.event-title {
+  color: #002244; /* Darker blue for titles */
+  font-size: 1.6rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.event-date {
+  color: #777; /* Subtle date color */
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.event-description {
+  color: #555; /* Readable description text */
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.no-events-message {
+  text-align: center;
+  grid-column: 1 / -1; /* Span across all columns in the grid */
+  padding: 30px;
+  font-style: italic;
+  color: #666;
+}
+
+/* Keyframe Animations (for consistent animations across sections) */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .events-page h1 {
+    font-size: 2.5rem;
+  }
+  .events-page .page-intro {
+    font-size: 1.05rem;
+    margin-bottom: 40px;
+  }
+  .events-page .section-heading {
+    font-size: 1.8rem;
+    margin-top: 40px;
+  }
+  .events-list {
+    grid-template-columns: 1fr; /* Stack event cards on small screens */
+    gap: 20px;
+  }
+  .event-card {
+    padding: 20px;
+  }
+  .event-title {
+    font-size: 1.4rem;
+  }
+  .event-date {
+    font-size: 0.9rem;
+  }
+  .event-description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .events-page h1 {
+    font-size: 2rem;
+  }
+  .events-page .page-intro {
+    font-size: 0.95rem;
+  }
+  .events-page .section-heading {
+    font-size: 1.6rem;
+  }
+  .event-title {
+    font-size: 1.3rem;
+  }
+}
