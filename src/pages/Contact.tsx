@@ -1,6 +1,5 @@
 // src/pages/Contact.tsx
-
-import React, { useState, FormEvent } from 'react';
+import { useState, type FormEvent } from 'react'; 
 import '../styles/App.css'; // Global styles
 import './Contact.css'; // Specific styles for Contact page
 
