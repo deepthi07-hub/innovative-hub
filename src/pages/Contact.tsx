@@ -138,17 +138,17 @@ const Contact = () => {
           <div className="info-item">
             <h3>General Inquiries</h3>
             <p>Email: <a href="mailto:info@nrtec.in">info@nrtec.in</a></p>
-            <p>Phone: <a href="tel:+918647239905">086472 39905</a></p> [cite: 1.1]
+            <p>Phone: <a href="tel:+918647239905">086472 39905</a></p>
           </div>
           <div className="info-item">
             <h3>Admissions</h3>
             <p>Email: <a href="mailto:admissions@nrtec.in">admissions@nrtec.in</a></p>
-            <p>Phone: <a href="tel:+919154686203">+91 9154686203</a>, <a href="tel:+919154686204">9154686204</a></p> [cite: 1.1]
+            <p>Phone: <a href="tel:+919154686203">+91 9154686203</a>, <a href="tel:+919154686204">9154686204</a></p>
           </div>
           <div className="info-item">
             <h3>Placements</h3>
             <p>Email: <a href="mailto:placements@nrtec.in">placements@nrtec.in</a></p>
-            <p>Phone: <a href="tel:+919885553622">+91 9885553622</a></p> [cite: 1.1]
+            <p>Phone: <a href="tel:+919885553622">+91 9885553622</a></p>
           </div>
           <div className="info-item">
             <h3>Our Address</h3>
@@ -156,7 +156,7 @@ const Contact = () => {
               Kotappakonda Road, Yellamanda (Post),<br />
               Narasaraopet - 522601, Palnadu Dist.,<br />
               Andhra Pradesh, India.
-            </p> [cite: 1.1]
+            </p>
             <a href="https://www.google.com/maps/search/Kotappakonda+Road,+Narasaraopeta+-+522601,+Palnadu+Dist.+Andhra+Pradesh+522601" target="_blank" rel="noopener noreferrer" className="map-link">
               View on Map
             </a>

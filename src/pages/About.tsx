@@ -1,6 +1,5 @@
 // src/components/About/About.jsx
 
-import React from 'react';
 import '../styles/App.css'; 
 import './About.css'; // Ensure this path is correct
 
